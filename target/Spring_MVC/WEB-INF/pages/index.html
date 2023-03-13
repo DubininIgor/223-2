@@ -6,10 +6,28 @@
     <title></title>
 </head>
 <body>
+<form  method="post">
+    <p><input type="text" name="name" placeholder="input name"/><br></p>
+    <p></p><input type="number" name="age" placeholder="input age"/><br></p>
+    <p><input type="submit" value="Add user"/></p>
+</form>
 <div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.getId()}"></td>
+            <td th:text="${user.getName()}"></td>
+            <td th:text="${user.getAge()}"></td>
+            <td th:buttom="${user.getName()}"></td>
+            <td th:text="${user.getAge()}"></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
